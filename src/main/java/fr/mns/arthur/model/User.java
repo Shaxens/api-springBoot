@@ -46,4 +46,8 @@ public class User {
     @JsonView(UserView.class)
     private WorkStation workStation;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JsonView(UserView.class)
+    private Rights rights;
+
 }

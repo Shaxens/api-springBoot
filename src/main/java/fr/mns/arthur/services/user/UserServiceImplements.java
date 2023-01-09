@@ -38,6 +38,7 @@ public class UserServiceImplements implements UserService {
             u.setMail(user.getMail());
             u.setPassword(user.getPassword());
             u.setWorkStation(user.getWorkStation());
+            u.setRights(user.getRights());
             return userRepository.save(u);
         }).orElseThrow(() -> new RuntimeException("User not found"));
     }
