@@ -2,7 +2,6 @@ package fr.mns.arthur.model;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import fr.mns.arthur.view.UserView;
-import fr.mns.arthur.view.WorkStationView;
 import lombok.Getter;
 import lombok.Setter;
 

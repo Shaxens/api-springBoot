@@ -2,7 +2,6 @@ package fr.mns.arthur.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import fr.mns.arthur.model.Rights;
-import fr.mns.arthur.model.User;
 import fr.mns.arthur.services.rights.RightsService;
 import fr.mns.arthur.view.UserView;
 import lombok.AllArgsConstructor;
