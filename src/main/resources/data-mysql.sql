@@ -1,3 +1,5 @@
+
+
 INSERT INTO `rights` (`label`) VALUES
                                      ('administrateur'),
                                      ('dev back');
@@ -12,3 +14,4 @@ INSERT INTO `user` (`lastname`, `firstname`,
                                                          'feopfhp', '2022-12-23'),
                                                         ('sawyer', 'tom', 'feif@outlook.fr',
                                                          '165152dzd', '2023-11-10');
+

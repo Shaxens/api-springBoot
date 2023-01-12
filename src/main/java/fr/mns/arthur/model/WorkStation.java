@@ -22,9 +22,11 @@ public class WorkStation {
     @JsonView({WorkStationView.class, UserView.class})
     private Long id;
 
+    @Column(nullable = false)
     @JsonView({WorkStationView.class, UserView.class})
     String title;
 
+    @Column(nullable = false)
     @JsonView({WorkStationView.class, UserView.class})
     String description;
 

@@ -19,7 +19,7 @@ public class Rights {
     @JsonView({RightsView.class, UserView.class})
     private Long id;
 
-    @Column(length = 40)
+    @Column(length = 40, nullable = false)
     @JsonView({RightsView.class, UserView.class})
     private String label;
 

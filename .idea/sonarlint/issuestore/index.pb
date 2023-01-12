@@ -1,3 +1,27 @@
 
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+`
+0src/main/java/fr/mns/arthur/view/RightsView.java,d\7\d7776bbf82015ac53dcd479977554262bbf9dff5
+j
+:src/main/java/fr/mns/arthur/repository/UserRepository.java,1\3\1346380534a5398c2b1b5900d18730ee5d52beb0
+q
+Asrc/main/java/fr/mns/arthur/repository/WorkStationRepository.java,7\5\7558288057bf434246e3d478d0479032304082f2
+e
+5src/main/java/fr/mns/arthur/view/WorkStationView.java,1\1\116c7e4824312dc22cf5f534ff7d78cc19c790df
+^
+.src/main/java/fr/mns/arthur/view/UserView.java,4\b\4b88b7d0f34a6c6470b89622e0395f007844d495
+l
+<src/main/java/fr/mns/arthur/repository/RightsRepository.java,7\7\770f621de17805d52a15e3faafc29cf62390f831
+U
+%src/main/java/fr/mns/arthur/Main.java,9\7\97535730d75dca120be6a1bd20d8383160edaf8e
+l
+<src/main/java/fr/mns/arthur/controller/RightsController.java,c\7\c7e35e96480c6e65239ace939f17a1a6599afce9
+x
+Hsrc/main/java/fr/mns/arthur/services/rights/RightsServiceImplements.java,9\9\996b1d6605c3813793d07494c99f7b6ccf6f44ab
+{
+Ksrc/main/java/fr/mns/arthur/services/workstation/WorkStationImplements.java,7\e\7eae4c6b453df08df6364c22f224ad507bbb7846
+x
+Hsrc/main/java/fr/mns/arthur/services/workstation/WorkStationService.java,8\1\81697197360338f92eb0316fc0459bc58db9d423
+n
+>src/main/java/fr/mns/arthur/services/rights/RightsService.java,1\2\12de0e7be11d744733de23b7e2d701ac0bb51acd

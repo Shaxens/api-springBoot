@@ -1,8 +1,11 @@
 package fr.mns.arthur.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonView;
 import fr.mns.arthur.view.UserView;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -12,6 +15,7 @@ import java.util.Date;
 @Table(name = "user")
 @Getter
 @Setter
+@NoArgsConstructor
 public class User {
 
     @Id
@@ -39,6 +43,11 @@ public class User {
     @JsonView(UserView.class)
     private Date effectiveDate;
 
+    @JsonCreator
+    public User(@JsonProperty("id") Long id) {
+        this.id = id;
+    }
+
     // external data
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -48,5 +57,9 @@ public class User {
     @ManyToOne(fetch = FetchType.EAGER)
     @JsonView(UserView.class)
     private Rights rights;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JsonView(UserView.class)
+    private Team team;
 
 }
