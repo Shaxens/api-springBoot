@@ -31,7 +31,8 @@ public class Team {
     @JsonView({TeamView.class, UserView.class})
     private Date creatingDate;
 
-
+    @JsonView(UserView.class)
+    private Boolean isLeader;
 
     @OneToMany(mappedBy = "team", cascade = CascadeType.ALL)
     @JsonView(TeamView.class)
@@ -39,10 +40,9 @@ public class Team {
 
     // External data
 
-    // rendre cette propriété non null un chef doit être un utilisateur faisant partie de l'équipe
     @OneToOne
-    @JoinColumn(nullable = false)
-    @JsonView({TeamView.class, UserView.class})
+    @JoinColumn(nullable = false, name = "leader_id", referencedColumnName = "id")
+    @JsonView(TeamView.class)
     private User leader;
 
 

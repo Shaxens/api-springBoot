@@ -60,6 +60,7 @@ public class User {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JsonView(UserView.class)
+    @JoinColumn(name = "team_id", referencedColumnName = "id")
     private Team team;
 
 }

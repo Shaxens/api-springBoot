@@ -1,8 +1,7 @@
-
-
 INSERT INTO `rights` (`label`) VALUES
                                      ('administrateur'),
                                      ('dev back');
+
 
 INSERT INTO `work_station` (`title`, `description`) VALUES
                                                             ('sysadmin', 'Un administrateur système avec tous les accès aux serveurs'),
@@ -15,3 +14,8 @@ INSERT INTO `user` (`lastname`, `firstname`,
                                                         ('sawyer', 'tom', 'feif@outlook.fr',
                                                          '165152dzd', '2023-11-10');
 
+INSERT INTO team (creating_date, leader_id) VALUES (CURRENT_DATE, 1);
+
+UPDATE user
+            SET team_id = 1
+            WHERE id = 1;
