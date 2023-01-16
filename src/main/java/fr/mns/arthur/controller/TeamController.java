@@ -63,7 +63,7 @@ public class TeamController {
     }
 
     @PutMapping("/leader/{id}")
-    public Team update(@PathVariable Long id,@RequestBody Team team) {
+    public Team updateLeader(@PathVariable Long id,@RequestBody Team team) {
         if (team.getUserList().size() > 1) {
             return teamService.update(id, team);
         } else {

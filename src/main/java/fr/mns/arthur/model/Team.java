@@ -43,5 +43,8 @@ public class Team {
     @JsonView(TeamView.class)
     private User leader;
 
+    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL)
+    @JsonView(TeamView.class)
+    private Set<Project> projectList = new HashSet<>();
 
 }

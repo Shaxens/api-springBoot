@@ -29,7 +29,7 @@ public class RightsServiceImplements implements RightsService {
     @Override
     public Rights rights(Long id) {
         return rightsRepository.findById(id).
-                orElseThrow(() -> new ResourceNotFoundException("User not found with ID: " + id + " . Please make sure this user exist."));
+                orElseThrow(() -> new ResourceNotFoundException("Rights not found with ID: " + id + " . Please make sure this project exist."));
     }
 
     @Override

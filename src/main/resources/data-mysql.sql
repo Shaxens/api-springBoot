@@ -14,8 +14,12 @@ INSERT INTO `user` (`lastname`, `firstname`,
                                                         ('sawyer', 'tom', 'feif@outlook.fr',
                                                          '165152dzd', '2023-11-10');
 
-INSERT INTO team (creating_date, leader_id) VALUES (CURRENT_DATE, 1);
+INSERT INTO `team` (creating_date, leader_id) VALUES (CURRENT_DATE, 1);
 
 UPDATE user
             SET team_id = 1
             WHERE id = 1;
+
+INSERT INTO `project` (title, description,
+                       starting_date) VALUES
+                                         ('Mon premier projet', 'Ceci est un projet de test', CURRENT_DATE)

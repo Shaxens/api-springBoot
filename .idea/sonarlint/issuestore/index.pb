@@ -1,8 +1,6 @@
 
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-`
-0src/main/java/fr/mns/arthur/view/RightsView.java,d\7\d7776bbf82015ac53dcd479977554262bbf9dff5
 q
 Asrc/main/java/fr/mns/arthur/repository/WorkStationRepository.java,7\5\7558288057bf434246e3d478d0479032304082f2
 e
@@ -15,8 +13,6 @@ U
 %src/main/java/fr/mns/arthur/Main.java,9\7\97535730d75dca120be6a1bd20d8383160edaf8e
 l
 <src/main/java/fr/mns/arthur/controller/RightsController.java,c\7\c7e35e96480c6e65239ace939f17a1a6599afce9
-x
-Hsrc/main/java/fr/mns/arthur/services/rights/RightsServiceImplements.java,9\9\996b1d6605c3813793d07494c99f7b6ccf6f44ab
 {
 Ksrc/main/java/fr/mns/arthur/services/workstation/WorkStationImplements.java,7\e\7eae4c6b453df08df6364c22f224ad507bbb7846
 x
@@ -29,7 +25,23 @@ q
 Asrc/main/java/fr/mns/arthur/controller/WorkStationController.java,3\0\30faceede0ac5bf0c3eebca550d5ff51ad40b1bc
 j
 :src/main/java/fr/mns/arthur/services/user/UserService.java,3\2\327410fb46ae28b352b80428620ce062eed2caa1
-]
--src/main/java/fr/mns/arthur/model/Rights.java,9\7\97d2b57f43f2fd6251319f3b853ea879df971618
 b
 2src/main/java/fr/mns/arthur/model/WorkStation.java,8\b\8b338293c7e9ed0147c60e2e652a1eeb14f83b70
+j
+:src/main/java/fr/mns/arthur/services/team/TeamService.java,2\8\288a625358e342a71feab718a411aea5f1d31ba7
+j
+:src/main/java/fr/mns/arthur/repository/UserRepository.java,1\3\1346380534a5398c2b1b5900d18730ee5d52beb0
+j
+:src/main/java/fr/mns/arthur/repository/TeamRepository.java,9\a\9a2ee82a349c98876845dbb624d4317d4d515dfd
+^
+.src/main/java/fr/mns/arthur/view/TeamView.java,b\c\bc079045ad0df02cccbd402bdfa7ada43452da98
+j
+:src/main/java/fr/mns/arthur/controller/UserController.java,d\0\d035295a4cf4e5f22a32cf1ee63d63b6708e8de1
+`
+0src/main/java/fr/mns/arthur/view/RightsView.java,d\7\d7776bbf82015ac53dcd479977554262bbf9dff5
+a
+1src/main/java/fr/mns/arthur/view/ProjectView.java,b\0\b0a890eca4278fdcf3a9a3ca343692b8c13ac675
+[
++src/main/java/fr/mns/arthur/model/User.java,d\9\d906a9cbbfeda54ca7287e3e49cb61f8b1670c03
+]
+-src/main/java/fr/mns/arthur/model/Rights.java,9\7\97d2b57f43f2fd6251319f3b853ea879df971618
