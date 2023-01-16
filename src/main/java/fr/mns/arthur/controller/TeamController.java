@@ -95,7 +95,7 @@ public class TeamController {
     @DeleteMapping("/delete/{id}")
     public String deleteTeam(@PathVariable Long id) {
         Team team = teamRepository.findById(id).orElse(null);
-        if (teamRepository.findById(id) == null) {
+        if (team == null) {
             return "Team not found";
         }
         team.getLeader().setTeam(null);
