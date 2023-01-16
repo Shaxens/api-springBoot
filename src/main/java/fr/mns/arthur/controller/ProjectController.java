@@ -21,10 +21,8 @@ import java.util.List;
 public class ProjectController {
 
     private final ProjectService projectService;
-    private final TeamRepository teamRepository;
     private final ProjectRepository projectRepository;
 
-    @Transactional
     @PostMapping("/create")
     public Project createProject(@RequestBody Project project) {
         return projectService.createProject(project);
@@ -39,45 +37,18 @@ public class ProjectController {
 
     @GetMapping("/{id}")
     public Project projectById(@PathVariable Long id) {
-        return projectService.project(id);
+        return projectRepository.findById(id).orElse(null);
     }
 
     @PutMapping("/update/{id}")
     public Project updateLeader(@PathVariable Long id,@RequestBody Project project) {
-        return project;
-    }
-
-    @PutMapping("/add/{id}")
-    public Project addUser(@PathVariable Long id, @RequestBody Project project) {
-        /*Team team = teamRepository.findById(id).orElse(null);
-        User userToAdd = userRepository.findById(user.getId()).orElse(null);
-
-        if (userToAdd == null) {
-            throw new IllegalArgumentException("The selected user doesn't exist !");
-        } else if (userToAdd.getTeam() != null) {
-            throw new IllegalArgumentException("The selected user is part of a team.");
-        } else {
-            if (team != null) {
-                team.getUserList().add(userToAdd);
-                userToAdd.setTeam(team);
-                return teamRepository.save(team);
-            } else {
-                throw new NullPointerException("Team is null !");
-            }
-        }*/
-        return project;
+        return projectService.update(id, project);
     }
 
     @Transactional
     @DeleteMapping("/delete/{id}")
     public String deleteTeam(@PathVariable Long id) {
-        /*Team team = teamRepository.findById(id).orElse(null);
-        if (team == null) {
-            return "Team not found";
-        }
-        team.getLeader().setTeam(null);
-        team.getUserList().clear();
-        teamRepository.deleteById(id);*/
+        projectService.deleteProject(id);
         return "project deleted";
     }
 

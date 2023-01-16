@@ -11,8 +11,6 @@ l
 <src/main/java/fr/mns/arthur/repository/RightsRepository.java,7\7\770f621de17805d52a15e3faafc29cf62390f831
 U
 %src/main/java/fr/mns/arthur/Main.java,9\7\97535730d75dca120be6a1bd20d8383160edaf8e
-l
-<src/main/java/fr/mns/arthur/controller/RightsController.java,c\7\c7e35e96480c6e65239ace939f17a1a6599afce9
 {
 Ksrc/main/java/fr/mns/arthur/services/workstation/WorkStationImplements.java,7\e\7eae4c6b453df08df6364c22f224ad507bbb7846
 x
