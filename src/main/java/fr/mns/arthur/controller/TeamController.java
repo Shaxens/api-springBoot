@@ -8,7 +8,6 @@ import fr.mns.arthur.repository.UserRepository;
 import fr.mns.arthur.services.team.TeamService;
 import fr.mns.arthur.view.TeamView;
 import lombok.AllArgsConstructor;
-import lombok.ToString;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,7 +37,7 @@ public class TeamController {
                 if (leader != null && team.getUserList().contains(leader)) {
                     team.setLeader(leader);
                     leader.setTeam(team);
-                    isLeader(team, leader);
+                    //isLeader(team, leader);
                 } else if (!team.getUserList().contains(leader)){
                     throw new IllegalArgumentException("The selected leader is not a member of the team.");
                 } else {
@@ -53,40 +52,56 @@ public class TeamController {
 
 
     @GetMapping("/list")
-    @JsonView({TeamView.class})
+    @JsonView(TeamView.class)
     public List<Team> teamList() {
         return teamService.teamList();
     }
 
     @GetMapping("/{id}")
-    public Team userById(@PathVariable Long id) {
+    public Team teamById(@PathVariable Long id) {
         return teamService.team(id);
     }
 
-    @PutMapping("/update/{id}")
+    @PutMapping("/leader/{id}")
     public Team update(@PathVariable Long id,@RequestBody Team team) {
-        User leader = userRepository.findById(id).orElse(null);
-        if (leader != null) {
-            isLeader(team, leader);
-        }
-        return teamService.update(id, team);
-    }
-
-    @DeleteMapping("/delete/{id}")
-    public String delete(@PathVariable Long id) {
-        return teamService.deleteTeam(id);
-    }
-
-
-    // Other Methods
-
-    private void isLeader(Team team, User leader) {
-        if (team.getLeader().getId() == leader.getId()) {
-            team.setIsLeader(TRUE);
+        if (team.getUserList().size() > 1) {
+            return teamService.update(id, team);
         } else {
-            team.setIsLeader(FALSE);
+            throw new IllegalArgumentException("Not able to change leader, there must be at least one other member in the team.");
         }
     }
 
+    @PutMapping("/add/{id}")
+    public Team addUser(@PathVariable Long id, @RequestBody User user) {
+        Team team = teamRepository.findById(id).orElse(null);
+        User userToAdd = userRepository.findById(user.getId()).orElse(null);
+
+        if (userToAdd == null) {
+            throw new IllegalArgumentException("The selected user doesn't exist !");
+        } else if (userToAdd.getTeam() != null) {
+            throw new IllegalArgumentException("The selected user is part of a team.");
+        } else {
+            if (team != null) {
+                team.getUserList().add(userToAdd);
+                userToAdd.setTeam(team);
+                return teamRepository.save(team);
+            } else {
+                throw new NullPointerException("Team is null !");
+            }
+        }
+    }
+
+    @Transactional
+    @DeleteMapping("/delete/{id}")
+    public String deleteTeam(@PathVariable Long id) {
+        Team team = teamRepository.findById(id).orElse(null);
+        if (teamRepository.findById(id) == null) {
+            return "Team not found";
+        }
+        team.getLeader().setTeam(null);
+        team.getUserList().clear();
+        teamRepository.deleteById(id);
+        return "Team deleted";
+    }
 
 }

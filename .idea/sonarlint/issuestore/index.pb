@@ -27,7 +27,9 @@ t
 Dsrc/main/java/fr/mns/arthur/services/user/UserServiceImplements.java,7\d\7dfd0ad1aaf5e5df7cc99c94313ac71e6ef59cbd
 q
 Asrc/main/java/fr/mns/arthur/controller/WorkStationController.java,3\0\30faceede0ac5bf0c3eebca550d5ff51ad40b1bc
-^
-.src/main/java/fr/mns/arthur/view/TeamView.java,b\c\bc079045ad0df02cccbd402bdfa7ada43452da98
 j
 :src/main/java/fr/mns/arthur/services/user/UserService.java,3\2\327410fb46ae28b352b80428620ce062eed2caa1
+]
+-src/main/java/fr/mns/arthur/model/Rights.java,9\7\97d2b57f43f2fd6251319f3b853ea879df971618
+b
+2src/main/java/fr/mns/arthur/model/WorkStation.java,8\b\8b338293c7e9ed0147c60e2e652a1eeb14f83b70

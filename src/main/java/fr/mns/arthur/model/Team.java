@@ -31,17 +31,15 @@ public class Team {
     @JsonView({TeamView.class, UserView.class})
     private Date creatingDate;
 
-    @JsonView(UserView.class)
-    private Boolean isLeader;
-
     @OneToMany(mappedBy = "team", cascade = CascadeType.ALL)
     @JsonView(TeamView.class)
     private Set<User> userList = new HashSet<>();
 
     // External data
 
+    // Trop compliqué de gérer le nullable = false
     @OneToOne
-    @JoinColumn(nullable = false, name = "leader_id", referencedColumnName = "id")
+    @JoinColumn(name = "leader_id", referencedColumnName = "id")
     @JsonView(TeamView.class)
     private User leader;
 

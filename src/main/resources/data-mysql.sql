@@ -9,7 +9,7 @@ INSERT INTO `work_station` (`title`, `description`) VALUES
 
 INSERT INTO `user` (`lastname`, `firstname`,
                     `mail`, `password`, `effective_date`) VALUES
-                                                        ('bansept', 'franck', 'blabla@gmail.com' ,
+                                                        ('vietti', 'arthur', 'blabla@gmail.com' ,
                                                          'feopfhp', '2022-12-23'),
                                                         ('sawyer', 'tom', 'feif@outlook.fr',
                                                          '165152dzd', '2023-11-10');

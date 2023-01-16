@@ -3,6 +3,7 @@ package fr.mns.arthur.model;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonView;
+import fr.mns.arthur.view.TeamView;
 import fr.mns.arthur.view.UserView;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,27 +21,27 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonView(UserView.class)
+    @JsonView({UserView.class, TeamView.class})
     private Long id;
 
     @Column(length = 50)
-    @JsonView(UserView.class)
+    @JsonView({UserView.class, TeamView.class})
     private String lastname;
 
     @Column(length = 50)
-    @JsonView(UserView.class)
+    @JsonView({UserView.class, TeamView.class})
     private String firstname;
 
     @Column(length = 80)
-    @JsonView(UserView.class)
+    @JsonView({UserView.class, TeamView.class})
     private String mail;
 
     @Column(length = 50)
-    @JsonView(UserView.class)
+    @JsonView({UserView.class, TeamView.class})
     private String password;
 
     @Temporal(TemporalType.DATE)
-    @JsonView(UserView.class)
+    @JsonView({UserView.class, TeamView.class})
     private Date effectiveDate;
 
     @JsonCreator
@@ -60,7 +61,6 @@ public class User {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JsonView(UserView.class)
-    @JoinColumn(name = "team_id", referencedColumnName = "id")
     private Team team;
 
 }
